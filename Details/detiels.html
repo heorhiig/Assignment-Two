@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./deteils.css">
+  <title>Document</title>
+</head> 
+<body>
+  <header>
+    <div class="top__bar">
+      <a href="#" class="top__bar__logo">
+        <img
+          src="../images/Property 1=Default.svg"
+          alt="logo bike"
+        >
+      </a>
+
+      <div class="top__bar__icones">
+        <a href="tel:+123455555555" class="icon icon--phone"></a>
+        <a href="#menu" class="icon icon--menu"></a>
+      </div>
+    </div>
+  </header>
+  
+  <section class="details" id="details">
+    <h2 class="section-title compare">The Details</h2>
+
+    <div class="details__wrapper">
+
+
+      <div class="button__wrapper">
+        <a
+          class="button button__link"
+          href="#"
+        >Explore
+        </a>
+      </div>
+    </div>
+  </section>
+  <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.min.js"></script>
+  <script id="detail-template" type="text/x-handlebars-template">
+    {{#each details}}
+      <article class="detail">
+        <div class="detail__photos">
+          <a href="#" class="detail__link detail__link--wide">
+            <img class="detail__photo" src="{{images.[0]}}" alt="{{title}}">
+          </a>
+          <a href="#" class="detail__link detail__link--square">
+            <img class="detail__photo" src="{{images.[1]}}" alt="{{title}}">
+          </a>
+        </div>
+        <h3 class="detail__title">{{title}}</h3>
+        <p class="detail__description">{{description}}</p>
+      </article>
+    {{/each}}
+  </script>
+  
+  <script src="./details.js"></script>
+  <script src="./menu.js"></script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./aboutUs.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/css/lightgallery-bundle.min.css">
+  <title>Document</title>
+</head>
+<body>
+  <header class="menu__top">
+    <div class="top__bar">
+      <a href="#menu" class="top__bar__logo">
+        <img
+          src="../images/Property 1=Default.svg"
+          alt="logo bike"
+        >
+      </a>
+
+      <div class="top__bar__icones">
+        <a href="tel:+123455555555" class="icon icon--phone"></a>
+        <a href="#menu" class="icon icon--menu"></a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="description">
+      In my work I use flex box and grid template, for better view. on each page you can see the top bar. Its implementation was done with js. I had to do something similar with react before, so rewriting it to js was not a problem for me.
+    </div>
+    <section id="gallery">
+      <a href="images/photo1.jpg" data-lg-size="600-600">
+          <img alt="Photo 1" src="../images//frst.png">
+      </a>
+      <a href="images/photo2.jpg" data-lg-size="600-600">
+          <img alt="Photo 2" src="../images/thrd.png">
+      </a>
+      <a href="images/photo3.jpg" data-lg-size="600-600">
+          <img alt="Photo 3" src="../images/scnd.png">
+      </a>
+  </section>
+
+
+    <button class="add" id="openModal">Add Comment</button>
+  
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="field">
+          <label class="label">Name</label>
+          <div class="control">
+            <input class="input" type="text" placeholder="Name" id="name">
+          </div>
+        </div>
+        
+        
+        
+        <form id="form">
+          <div class="field">
+
+            <label class="label">Email</label>
+              <div class="control has-icons-left has-icons-right">
+                <input class="input is-danger" type="email" placeholder="Email input" id="mail">
+                <span class="icon is-small is-left">
+                  <i class="fas fa-envelope"></i>
+                </span>
+                <span class="icon is-small is-right">
+                  <i class="fas fa-exclamation-triangle"></i>
+                </span>
+              </div>
+              <p class="help is-danger">This email is invalid</p>
+            </div>
+          
+                <div class="field">
+                  <label class="label">Subject</label>
+                  <div class="control">
+                    <div class="select">
+                      <select id="option">
+                        <option>Select dropdown</option>
+                        <option>Qestion</option>
+                        <option>Advice</option>
+                        <option>Help</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+          
+                <div class="field">
+                  <label class="label">Message</label>
+                  <div class="control">
+                    <textarea id="mess" class="textarea"></textarea>
+                  </div>
+                </div>
+          
+                <div class="field">
+                  <div class="control">
+                    <label class="checkbox">
+                      <input type="checkbox">
+                      I agree to the <a href="#">terms and conditions</a>
+                    </label>
+                  </div>
+                </div>
+          
+          
+                <div class="field is-grouped">
+                  <div class="control">
+                    <button class="button is-link sub">Submit</button>
+                  </div>
+                  <div class="control">
+                    <button class="button is-link is-light">Cancel</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </form>
+
+    <div class="comments">
+
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/lightgallery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/fullscreen/lg-fullscreen.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.min.js"></script>
+  <script id="comment-template" type="text/x-handlebars-template">
+    {{#each comments}}
+      <div class="comment">
+        <nav class="comment_info">
+          <p class="comment_name">Name: {{name}}</p>
+          <p class="comment_name">Mail: {{mail}}</p>
+          <p class="comment_option">Option: {{option}}</p>
+        </nav>
+        <p class="comment_mess">Comment: {{mess}}</p>
+      </div>
+    {{/each}}
+  </script>
+
+  <script src="./aboutUs.js"></script>
+  <script src="./menu.js"></script>
+</body>
+</html>

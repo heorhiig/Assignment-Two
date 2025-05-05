@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./contact.css">
+  <link rel="stylesheet" type="text/css" href="before-effect-slider.css"/>
+  <title>Document</title>
+</head>
+<body>
+  <header class="menu__top">
+    <div class="top__bar">
+      <a href="#menu" class="top__bar__logo">
+        <img
+          src="../images/Property 1=Default.svg"
+          alt="logo bike"
+        >
+      </a>
+
+      <div class="top__bar__icones">
+        <a href="tel:+123455555555" class="icon icon--phone"></a>
+        <a href="#menu" class="icon icon--menu"></a>
+      </div>
+    </div>
+  </header>
+
+  <section class="contact" id="contact">
+    <h1 class="section-title section-title-contact">Contact us</h1>
+    <div class="contact__wrapper">
+      <form
+        class="contacts__form">
+        <input
+          data-qa="keypress"
+          type="text"
+          class="contact__form__input input"
+          placeholder="Name"
+          autocomplete="off"
+          required
+        >
+        <input
+          data-qa="keypress"
+          type="email"
+          class="contact__form__input input"
+          placeholder="Email"
+          autocomplete="aff"
+          required
+        >
+        <textarea
+          name="'Message"
+          class="contact__form__textarea textarea"
+          placeholder="Message"
+          required
+        ></textarea>
+        <input type="radio" id="radio">
+        <label for="#radio">You are seasoned client</label>
+        <input type="radio" id="radio">
+        <label for="#radio">You are new client</label>
+        <div class="button__wrapper">
+          <button class="button__wrapper__contact button">Send</button>
+        </div>
+      </form>
+  
+      <div class="contacts__content">
+        <ul class="contacts-content__list">
+          <li id="num_holder" class="contacts-content__item">
+              Phone <script id="num" type="text/x-handlebars-template"></script> <a class="contacts-content__link" href="tel:+1 234 5555-55-55">+1 234 5555-55-55 </a>
+          </li>
+          <li id="mai_holderl" class="contacts-content__item">
+               <script id="mail" type="text/x-handlebars-template">
+                <a class="contacts-content__link" href="mailto:hello@miami.com"><span style="color: black;"> Email </span> <br>{{m}}</a>
+              </script> 
+          </li>
+            <li id="adreess_holder" class="contacts-content__item">
+                <script id="adress" type="text/x-handlebars-template">
+                  <a
+                  class="contacts-content__link"
+                  target="_blank"
+                  href={{href}}
+                ><span style="color: black;"> Address </span> <br> {{street}} </a>
+                </script>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="slider__section" id="delayed-slider" style="display: none;">
+    <div id="before-after-slider"></div>
+  </section>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.min.js"></script>
+  <script>
+    const adress = {
+      href: 'https://www.google.com.ua/maps/place/400+N+1st+Ave+STE+700,+Minneapolis,+MN+55401,+%D0%A1%D0%A8%D0%90/@44.9772656,-93.4091942,11z/data=!4m6!3m5!1s0x52b3328fdf233887:0x3348e5113ed2472d!8m2!3d44.9813258!4d-93.2731311!16s%2Fg%2F11nyn_tfyt?hl=ru&entry=ttu',
+      street: '400 first ave. suite 700 Minneapolis, MN 55401'
+    }
+
+  let template = Handlebars.compile(document.querySelector('#adress').innerHTML);
+
+  let output = template(adress);
+
+  document.querySelector('#adreess_holder').innerHTML=output;
+  </script>
+
+  <script>
+    const mail = {
+      m: 'hello@miami.com'
+    }
+
+    let template2 = Handlebars.compile(document.querySelector('#mail').innerHTML);
+
+  let output2 = template2(mail);
+
+  document.querySelector('#mai_holderl').innerHTML=output2;
+  </script>
+  <script src="before-effect-slider.js"></script>
+  <script src="./menu.js"></script>
+  <script src="contact.js"></script>
+</body>
+</html>

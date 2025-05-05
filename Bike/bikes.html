@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./bike.css">
+  <title>Document</title>
+</head>
+<body>
+  <header>
+    <div class="top__bar">
+      <a href="#" class="top__bar__logo">
+        <img
+          src="../images/Property 1=Default.svg"
+          alt="logo bike"
+        >
+      </a>
+
+      <div class="top__bar__icones">
+        <a href="tel:+123455555555" class="icon icon--phone"></a>
+        <a href="#menu" class="icon icon--menu"></a>
+      </div>
+    </div>
+  </header>
+
+  <section class="bikes" id="compare--bikes">
+    <div class="wrap">
+      <h2 class="section-title compare">Compare bikes</h2>
+      <button id="add">Add bike</button>
+    </div>
+
+  <div id="addBikeModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Add New Bike</h2>
+      <form id="bikeForm">
+        <div class="form-group">
+          <label for="title">Title:</label>
+          <input type="text" id="title" required>
+        </div>
+        <div class="form-group">
+          <label for="description">Description:</label>
+          <textarea id="description" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="price">Price:</label>
+          <input type="text" id="price" required>
+        </div>
+        <div class="form-group">
+          <label for="image">Image URL:</label>
+          <input type="text" id="image" required>
+        </div>
+        <button id="modalAdd" type="submit">Add Bike</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="passwordModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Enter Admin Password</h2>
+      <input type="password" id="adminPassword" placeholder="Password">
+      <button id="submitPassword">Submit</button>
+      <p id="passwordError" style="color:red;"></p>
+    </div>
+  </div>
+
+  <div class="loader" style="display: none;">
+    <img src="../images/loading.gif" alt="loader">
+  </div>
+
+    <div class="recommended__products">
+    </div>
+  </section>
+  <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.min.js"></script>
+  <script id="bike-template" type="text/x-handlebars-template">
+    {{#each bikes}}
+      <article class="recommended__product">
+        <a href="#"><img class="product__photo" src="{{img}}" alt="{{title}}"></a>
+        <h3 class="product__title">{{title}}</h3>
+        <p class="product__description">{{description}}</p>
+        <p class="product__price">{{price}}</p>
+      </article>
+    {{/each}}
+  </script>
+  <script src="./bikes.js"></script>
+  <script src="./menu.js"></script>
+</body>
+</html>
