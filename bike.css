@@ -90,19 +90,19 @@ body {
 }
 
 .icon--menu {
-  background-image: url(../images/icon-burger-menu.png);
+  background-image: url(./images/icon-burger-menu.png);
 
   &:hover {
-    background-image: url(../images/icon-burger-menu-hover.svg);
+    background-image: url(./images/icon-burger-menu-hover.svg);
   }
 }
 
 .icon--close {
-  background-image: url(../images/icon-close.svg);
+  background-image: url(./images/icon-close.svg);
 }
 
 .icon--phone {
-  background-image: url(../images/icon-phone-call.svg);
+  background-image: url(./images/icon-phone-call.svg);
   cursor: pointer;
   position: relative;
 
@@ -241,4 +241,8 @@ button:hover {
   justify-content: center;
   align-items: center;
   z-index: 1;
+}
+
+label {
+  color: black;
 }
