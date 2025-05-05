@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" type="text/css" href="before-effect-slider.css"/>
   <title>MyBike</title>
 </head>
 <body>
@@ -38,7 +39,26 @@
       <h2 class="about--as__title">Move Free</h2>
       <p class="about--as__description">This website is for selling the best bikes on the market. You can order a bike or if you haven't decided yet to try a test drive.</p>
     </div>
+
+    <h1 class="images_title">Choose your future</h1>
+    <div id="images">
+    </div>
+  
   </main>
+
+  <script type="text/javascript" src="before-effect-slider.js"></script>
+  <script>
+    beforeEffectslider({
+      Selector: "#images",
+      BeforeImage: "images/OIP.jpg", 
+      AfterImage: "images/broken_bike.jpg", 
+      DragFrom:80,
+      ButtonsText:{ 
+          after:'After',
+          before:'Before'
+      },
+    });
+    </script>
   <script src="./index.js"></script>
   <script src="./menu.js"></script>
 </body>
